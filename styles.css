@@ -144,6 +144,12 @@ label {
   font-weight: 700;
 }
 
+.input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
 input {
   width: 100%;
   padding: 17px 18px;
@@ -164,6 +170,42 @@ input:focus {
 input::placeholder {
   color: #a5aca8;
   font-weight: 400;
+}
+
+button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border: 1px solid var(--green);
+  border-radius: 3px;
+  color: var(--green);
+  background: transparent;
+  cursor: pointer;
+  font: 700 0.72rem 'Manrope', sans-serif;
+  white-space: nowrap;
+  transition: color 160ms, background-color 160ms, box-shadow 160ms;
+}
+
+button:hover,
+button:focus-visible {
+  color: #fff;
+  background: var(--green);
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(8, 120, 87, 0.12);
+}
+
+button svg {
+  width: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .result-block {
@@ -262,5 +304,13 @@ footer a:hover {
 
   label {
     margin-top: 32px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    min-height: 48px;
   }
 }

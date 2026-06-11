@@ -16,8 +16,9 @@ test('masks each word according to its length', () => {
     ['Alice', 'AliXX'],
     ['Daniel', 'DanXXX'],
     ['Michael', 'MichXXX'],
-    ['Samantha', 'SamaXXXX'],
-    ['Alexandra', 'AlexaXXXX']
+    ['Samantha', 'SamanXXX'],
+    ['Alexandra', 'AlexaXXXX'],
+    ['Christopher', 'ChrisXXXXXX']
   ];
 
   for (const [input, expected] of cases) {
@@ -39,4 +40,10 @@ test('returns an empty string for empty or non-string values', () => {
   for (const input of ['', null, undefined, 123, false, {}, []]) {
     assert.equal(maskPayNowName(input), '');
   }
+});
+
+test('reveals at most the first 5 characters for blocks of 8 or more characters', () => {
+  assert.equal(maskPayNowName('Samantha'), 'SamanXXX');
+  assert.equal(maskPayNowName('Alexandra'), 'AlexaXXXX');
+  assert.equal(maskPayNowName('Christopher'), 'ChrisXXXXXX');
 });

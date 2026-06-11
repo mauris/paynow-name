@@ -26,13 +26,13 @@ maskPayNowName('Ravi s/o Kumar'); // "RaXX s/X KumXX"
 | 3–4 | 2 |
 | 5–6 | 3 |
 | 7 | 4 |
-| 8+ | Half, rounded up |
+| 8+ | First 5 characters |
 
 The legal conjunctions `s/o` and `d/o` are displayed as `s/X` and `d/X`, preserving their original letter casing.
 
 ## Demo
 
-The static demo imports the same package source used by npm. To run it locally, serve the repository root with any static file server, for example:
+The static demo imports the same package source used by npm and includes a button for trying randomly generated Singaporean names. To run it locally, serve the repository root with any static file server, for example:
 
 ```sh
 npx serve .

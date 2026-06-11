@@ -32,8 +32,8 @@ export function maskPayNowName(fullName) {
       } else if (len === 7) {
         visibleCount = 4;
       } else {
-        // For longer blocks (8+ characters), reveal roughly 50% of the string.
-        visibleCount = Math.ceil(len / 2);
+        // For longer blocks (8+ characters), reveal only the first 5 characters.
+        visibleCount = 5;
       }
 
       // Extract the unmasked prefix and pad the rest with "X".
