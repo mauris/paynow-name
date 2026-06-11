@@ -1,0 +1,28 @@
+{
+  "name": "paynow-name",
+  "version": "1.0.0",
+  "description": "Mask full names using PayNow partial masking rules.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "npm test && npm pack --dry-run"
+  },
+  "keywords": [
+    "paynow",
+    "mask",
+    "name",
+    "privacy"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
