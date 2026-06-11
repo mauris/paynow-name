@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Preview how a full name appears after applying PayNow partial masking rules."
+    />
+    <title>PayNow Name Masker</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow"><span aria-hidden="true"></span> Privacy preview</div>
+        <h1 id="page-title">See a name the way<br /><em>PayNow</em> displays it.</h1>
+        <p class="intro">
+          Enter a full legal name to apply the standard partial masking rules instantly. Everything
+          happens locally in your browser.
+        </p>
+      </section>
+
+      <section class="masker-card" aria-labelledby="masker-title">
+        <div class="card-heading">
+          <div>
+            <p class="step">01 / Enter a name</p>
+            <h2 id="masker-title">Name masking preview</h2>
+          </div>
+          <span class="local-badge">Local only</span>
+        </div>
+
+        <label for="full-name">Official legal name</label>
+        <div class="input-row">
+          <input
+            id="full-name"
+            name="full-name"
+            type="text"
+            autocomplete="off"
+            placeholder="e.g. Ravi s/o Kumar"
+            autofocus
+          />
+          <button id="random-name" type="button" title="Generate a random Singaporean name">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 3h5v5" />
+              <path d="m21 3-6.5 6.5a4 4 0 0 1-5.7 0L3 3.7" />
+              <path d="M16 21h5v-5" />
+              <path d="m21 21-6.5-6.5a4 4 0 0 0-5.7 0L3 20.3" />
+            </svg>
+            Random name
+          </button>
+        </div>
+
+        <div class="result-block">
+          <div class="result-label">
+            <span>Masked PayNow display name</span>
+            <span aria-hidden="true">Live result</span>
+          </div>
+          <output id="masked-name" for="full-name" aria-live="polite">
+            <span class="placeholder">Your masked name will appear here</span>
+          </output>
+        </div>
+
+        <p class="privacy-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          Your input never leaves this page.
+        </p>
+      </section>
+
+      <footer>
+        <span>
+          Powered by
+          <a href="https://github.com/mauris/paynow-name/"><code>maskPayNowName()</code></a>
+        </span>
+        <span>Open source · MIT</span>
+      </footer>
+    </main>
+  </body>
+</html>
